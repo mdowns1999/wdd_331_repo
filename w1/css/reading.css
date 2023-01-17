@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&family=Lora&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+html{
+    height:100%;
+    font-size: 1em;
+}
+
+body{
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    color:#333;
+    padding: 10px;
+    margin:0px;
+    font-size: 20px;
+    /* min-width: 500px; */
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+a{
+    text-decoration: none;
+    color:#666;
+}
+
+
+a:hover{
+    color:#00ddff;
+}
+
+a:active{
+    color:#DEB887;
+}
+
+h1 a, h1 a:hover {
+    color:#666;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+nav{
+    text-align: center;
+    border-top:2px solid #d0d0d0;
+    border-bottom:2px solid #d0d0d0;
+
+}
+
+ul {
+    list-style: none;
+    padding:10px;
+    margin:0px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li{
+    padding: 5px;
+}
+
+.post-date{
+    text-align: right;
+    font-size: 23px;
+    font-weight:500;
+    border-bottom:2px solid #d0d0d0;
+    padding:40px 15px 10px 5px;
+}
+
+article{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+
+.post-content{
+    padding-top: 15px;
+}
+
+.post-content figure img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@media screen and (min-width: 850px) {
+    body{
+        padding:20px;
+        font-size: 23px;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: right;
+    }
+
+    nav ul li{
+        padding: 10px;
+    }
+
+    main{
+        margin-top:30px;
+    }
+
+    article{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .post-date{
+        grid-column: 1/2;
+        border-bottom:none;
+        font-size: 25px;
+    }
+
+    .post-content{
+        grid-column: 2/4;
+        border-left:2px solid #d0d0d0;
+        border-bottom:2px dashed #d0d0d0;
+        padding:10px;
+    }
+
+    .post-content figure img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+
+    
+    
+}

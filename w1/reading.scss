@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&family=Lora&display=swap');
+
+$text-color: #666;
+$link-color-hover: #00ddff;
+$link-color-active: #DEB887;
+$body-fonts:Helvetica, Arial, sans-serif;
+$body-font-size: 20px;
+$body-color: #333;
+$heading-fonts: 'Lora', serif;
+$min-width: 850px;
+$dectrative-border-color:#d0d0d0;
+$general-padding: 10px;
+
+
+@mixin center-image($width) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: $width;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+html{
+    height:100%;
+    font-size: 1em;
+}
+
+body{
+    height: 100%;
+    font-family: $body-fonts;
+    color:$body-color;
+    padding: $general-padding;
+    margin:0px;
+    font-size: $body-font-size;
+}
+
+h1, h2, h3 {
+    font-family: $heading-fonts;
+}
+
+a{
+    text-decoration: none;
+    color:$text-color;
+
+    &:hover{
+        color:$link-color-hover;
+    }
+
+    &:active {
+        color:$link-color-active;
+    }
+}
+
+
+h1 {
+    a, a:hover{
+        color:$text-color;
+        font-weight: bold;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+nav{
+    text-align: center;
+    border-top:2px solid $dectrative-border-color;
+    border-bottom:2px solid $dectrative-border-color;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding:$general-padding;
+        margin:0px;
+
+        li {
+            padding: 5px;
+        }
+    }
+}
+
+
+.post-date{
+    text-align: right;
+    font-size: 23px;
+    font-weight:500;
+    border-bottom:2px solid $dectrative-border-color;
+    padding:40px 15px 10px 5px;
+}
+
+article{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+
+.post-content{
+    padding-top: 15px;
+    figure img{
+        @include center-image(50%);
+    }
+}
+
+
+@media screen and (min-width: $min-width) {
+    body{
+        padding:$general-padding;
+        font-size: $body-font-size + 3px;
+    }
+
+    nav {
+        ul {
+            flex-direction: row;
+            justify-content: right;
+            li{
+                padding: $general-padding;
+            }
+        }
+    }
+
+    main{
+        margin-top:30px;
+    }
+
+    article{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .post-date{
+        grid-column: 1/2;
+        border-bottom:none;
+        font-size: 25px;
+    }
+
+    .post-content{
+        grid-column: 2/4;
+        border-left:2px solid $dectrative-border-color;
+        border-bottom:2px dashed $dectrative-border-color;
+        padding:$general-padding;
+
+        figure img{
+            @include center-image(40%);
+        }
+    }
+}
